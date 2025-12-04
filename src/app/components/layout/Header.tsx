@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-700/50'
+            ? 'bg-white/70 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm'
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
@@ -95,10 +95,10 @@ export const Header: React.FC = () => {
                 <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-sm font-medium transition-colors duration-200 ${
+                  className={`text-sm font-medium transition-colors duration-200 border-b-2 ${
                     activeSection === item.href.slice(1)
-                      ? 'text-blue-600 dark:text-blue-400'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
+                      : 'text-slate-600 dark:text-slate-400 border-transparent hover:text-slate-900 dark:hover:text-white'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

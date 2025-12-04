@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import { motion } from 'framer-motion';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -20,7 +20,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
+    const uid = useId();
+    const inputId = id || `input-${uid}`;
 
     return (
       <div className="space-y-1">
@@ -86,7 +87,8 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref
   ) => {
-    const textareaId = id || `textarea-${Math.random().toString(36).substr(2, 9)}`;
+    const uid = useId();
+    const textareaId = id || `textarea-${uid}`;
 
     return (
       <div className="space-y-1">

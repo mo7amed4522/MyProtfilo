@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Code, Database, Server, Smartphone, Cloud, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
@@ -203,10 +203,10 @@ const SkillCategory: React.FC<{
 };
 
 export const Skills: React.FC = () => {
-  const [ref, inView] = useInView({
-    once: true,
-    amount: 0.1
-  });
+  const statsRef = useRef<HTMLDivElement>(null);
+  const statsInView = useInView(statsRef, { once: true, amount: 0.1 });
+  const gridRef = useRef<HTMLDivElement>(null);
+  const gridInView = useInView(gridRef, { once: true, amount: 0.1 });
 
   const totalSkills = SKILLS_DATA.reduce((total, category) => total + category.skills.length, 0);
   const averageProficiency = Math.round(
@@ -237,10 +237,10 @@ export const Skills: React.FC = () => {
         {/* Stats Overview */}
         <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-          ref={ref}
+          ref={statsRef}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={statsInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants} className="text-center">
             <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
@@ -279,10 +279,10 @@ export const Skills: React.FC = () => {
         {/* Skills Categories Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          ref={ref}
+          ref={gridRef}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={gridInView ? "visible" : "hidden"}
         >
           {SKILLS_DATA.map((category, index) => (
             <SkillCategory

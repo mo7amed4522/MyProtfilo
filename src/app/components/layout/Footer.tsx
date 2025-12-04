@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-12">
@@ -104,7 +104,7 @@ export const Footer: React.FC = () => {
             {/* Brand & Description */}
             <motion.div variants={itemVariants} className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold shadow-sm">
                   KM
                 </div>
                 <span className="text-xl font-bold">Khaled Mohamed</span>
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors duration-200"
+                    className="p-2 bg-slate-800/80 rounded-lg hover:bg-slate-700 transition-colors duration-200 shadow-sm"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     aria-label={link.label}
