@@ -4,7 +4,8 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Code, Database, Server, Smartphone, Cloud, ChevronDown, ChevronUp, Star } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/Card';
-import { SKILLS_DATA, SkillCategoryData } from '@/lib/constants';
+import { SKILLS_DATA } from '@/lib/constants';
+import { SkillCategoryData } from '@/lib/types';
 
 const iconMap = {
   Code: Code,
@@ -19,7 +20,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -30,7 +31,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };
@@ -68,9 +69,9 @@ const SkillBar: React.FC<{
           initial={{ width: 0 }}
           animate={{ width: isVisible ? `${skill.proficiency}%` : 0 }}
           transition={{
-            duration: 1.5,
-            ease: "easeOut",
-            delay: 0.2
+            duration: 1,
+            delay: 0.1,
+            ease: 'easeOut'
           }}
         />
       </div>
@@ -141,7 +142,7 @@ const SkillCategory: React.FC<{
                 initial={{ rotate: -180, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.2, ease: 'easeInOut' }}
               >
                 {isExpanded ? (
                   <ChevronUp className="w-5 h-5 text-slate-400" />
@@ -159,7 +160,7 @@ const SkillCategory: React.FC<{
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
               className="overflow-hidden"
             >
               <CardContent className="pt-0">
@@ -216,19 +217,19 @@ export const Skills: React.FC = () => {
   );
 
   return (
-    <section id="skills" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="skills" className="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">
             Technical Skills
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
             A comprehensive overview of my technical expertise across different domains,
             with proficiency levels based on real-world project experience.
           </p>
@@ -236,41 +237,41 @@ export const Skills: React.FC = () => {
 
         {/* Stats Overview */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
           ref={statsRef}
           variants={containerVariants}
           initial="hidden"
           animate={statsInView ? "visible" : "hidden"}
         >
-          <motion.div variants={itemVariants} className="text-center">
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+          <motion.div variants={itemVariants} className="text-center p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">
               {SKILLS_DATA.length}
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Categories
             </div>
           </motion.div>
-          <motion.div variants={itemVariants} className="text-center">
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+          <motion.div variants={itemVariants} className="text-center p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1 sm:mb-2">
               {totalSkills}
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Technologies
             </div>
           </motion.div>
-          <motion.div variants={itemVariants} className="text-center">
-            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+          <motion.div variants={itemVariants} className="text-center p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1 sm:mb-2">
               {averageProficiency}%
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Avg. Proficiency
             </div>
           </motion.div>
-          <motion.div variants={itemVariants} className="text-center">
-            <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
+          <motion.div variants={itemVariants} className="text-center p-4 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1 sm:mb-2">
               3+
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Years Experience
             </div>
           </motion.div>
@@ -278,7 +279,7 @@ export const Skills: React.FC = () => {
 
         {/* Skills Categories Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
           ref={gridRef}
           variants={containerVariants}
           initial="hidden"
@@ -295,21 +296,30 @@ export const Skills: React.FC = () => {
 
         {/* Key Technologies Highlight */}
         <motion.div
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
+          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-white mb-6">
             Core Technologies
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {['Go', 'Flutter', 'TypeScript', 'AWS', 'Docker', 'PostgreSQL', 'Redis'].map((tech) => (
               <motion.div
                 key={tech}
-                className="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 text-sm sm:text-base"
+                whileHover={{ 
+                  scale: 1.05, 
+                  y: -2,
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
+                }}
                 whileTap={{ scale: 0.95 }}
+                transition={{
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 15
+                }}
               >
                 <span className="font-medium text-slate-700 dark:text-slate-300">{tech}</span>
               </motion.div>

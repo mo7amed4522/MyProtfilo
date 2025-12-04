@@ -34,7 +34,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -45,7 +45,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };
@@ -127,43 +127,43 @@ export const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="contact" className="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900">
       <Toaster position="top-right" />
-
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">
             Get In Touch
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
             I'm always interested in hearing about new opportunities, exciting projects, or just having a chat about technology.
             Feel free to reach out!
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <Card className="h-full">
+            <Card className="h-full rounded-xl shadow-lg">
               <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
+                <CardTitle className="flex items-center space-x-2 text-lg sm:text-xl">
                   <Send className="w-5 h-5" />
                   <span>Send Me a Message</span>
                 </CardTitle>
               </CardHeader>
 
               <CardContent>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 sm:space-y-6">
                   <motion.div variants={itemVariants}>
                     <Input
                       {...register('name')}
@@ -172,6 +172,7 @@ export const Contact: React.FC = () => {
                       icon={<User className="w-5 h-5 text-slate-400" />}
                       error={errors.name?.message}
                       disabled={isSubmitting}
+                      className="text-sm sm:text-base"
                     />
                   </motion.div>
 
@@ -184,6 +185,7 @@ export const Contact: React.FC = () => {
                       icon={<Mail className="w-5 h-5 text-slate-400" />}
                       error={errors.email?.message}
                       disabled={isSubmitting}
+                      className="text-sm sm:text-base"
                     />
                   </motion.div>
 
@@ -195,6 +197,7 @@ export const Contact: React.FC = () => {
                       icon={<MessageSquare className="w-5 h-5 text-slate-400" />}
                       error={errors.subject?.message}
                       disabled={isSubmitting}
+                      className="text-sm sm:text-base"
                     />
                   </motion.div>
 
@@ -202,10 +205,11 @@ export const Contact: React.FC = () => {
                     <Textarea
                       {...register('message')}
                       label="Message"
-                      rows={6}
+                      rows={5}
                       placeholder="Hi Khaled, I'd like to discuss..."
                       error={errors.message?.message}
                       disabled={isSubmitting}
+                      className="text-sm sm:text-base"
                     />
                   </motion.div>
 
@@ -216,7 +220,7 @@ export const Contact: React.FC = () => {
                       size="lg"
                       loading={isSubmitting}
                       icon={<Send className="w-5 h-5" />}
-                      className="w-full"
+                      className="w-full py-3 text-sm sm:text-base"
                       disabled={!isDirty}
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -226,9 +230,9 @@ export const Contact: React.FC = () => {
 
                 <motion.div
                   variants={itemVariants}
-                  className="mt-6 p-4 bg-slate-50 dark:bg-slate-800 rounded-lg"
+                  className="mt-5 sm:mt-6 p-4 bg-slate-100 dark:bg-slate-800 rounded-lg"
                 >
-                  <p className="text-sm text-slate-600 dark:text-slate-400 text-center">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 text-center">
                     I typically respond within 24-48 hours during business days.
                   </p>
                 </motion.div>
@@ -238,30 +242,30 @@ export const Contact: React.FC = () => {
 
           {/* Contact Information */}
           <motion.div
-            className="space-y-6"
+            className="space-y-6 sm:space-y-8"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Contact Cards */}
-            <Card>
+            <Card className="rounded-xl shadow-lg">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle className="text-lg sm:text-xl">Contact Information</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={info.label}
                       href={info.href}
                       target={info.href.startsWith('http') ? '_blank' : undefined}
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-200"
+                      className="flex items-center space-x-3 sm:space-x-4 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                      transition={{ delay: index * 0.05, ease: 'easeOut' }}
                     >
                       <div className="flex-shrink-0">
                         <info.icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -270,7 +274,7 @@ export const Contact: React.FC = () => {
                         <p className="text-sm font-medium text-slate-900 dark:text-white">
                           {info.label}
                         </p>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                           {info.value}
                         </p>
                       </div>
@@ -284,33 +288,33 @@ export const Contact: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.4, ease: 'easeOut' }}
             >
-              <Card>
+              <Card className="rounded-xl shadow-lg">
                 <CardHeader>
-                  <CardTitle>Current Availability</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">Current Availability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-green-600 dark:text-green-400 font-medium">
+                      <span className="text-green-600 dark:text-green-400 font-medium text-sm sm:text-base">
                         Open to Opportunities
                       </span>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                       I'm currently open to freelance projects, consulting opportunities, and full-time positions.
                       Feel free to reach out if you think we could work well together!
                     </p>
                     <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                      <h4 className="font-medium text-slate-900 dark:text-white mb-2">
+                      <h4 className="font-medium text-slate-900 dark:text-white mb-2 text-sm sm:text-base">
                         Preferred Topics:
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {['Go Development', 'Flutter Apps', 'Cloud Architecture', 'Backend Systems', 'API Design'].map((topic) => (
                           <span
                             key={topic}
-                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
+                            className="px-2 py-1 sm:px-3 sm:py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
                           >
                             {topic}
                           </span>

@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
 
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.slice(1));
@@ -67,12 +67,12 @@ export const Header: React.FC = () => {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/70 dark:bg-slate-900/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm'
+            ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-slate-900/80 border-b border-slate-200/30 dark:border-slate-800/30 shadow-sm'
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -80,25 +80,26 @@ export const Header: React.FC = () => {
             <motion.div
               className="flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold shadow-md">
                 KM
               </div>
-              <span className="text-xl font-bold text-slate-900 dark:text-white">
+              <span className="text-xl font-bold text-slate-900 dark:text-white truncate max-w-[140px] md:max-w-none">
                 Khaled Mohamed
               </span>
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
               {navItems.map((item) => (
                 <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`text-sm font-medium transition-colors duration-200 border-b-2 ${
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                     activeSection === item.href.slice(1)
-                      ? 'text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400'
-                      : 'text-slate-600 dark:text-slate-400 border-transparent hover:text-slate-900 dark:hover:text-white'
+                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -109,16 +110,16 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Right side actions */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
               {/* Social Links - Desktop */}
-              <div className="hidden lg:flex items-center space-x-2">
+              <div className="hidden lg:flex items-center space-x-1">
                 {socialLinks.map((link) => (
                   <motion.a
                     key={link.label}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+                    className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     aria-label={link.label}
@@ -133,7 +134,7 @@ export const Header: React.FC = () => {
 
               {/* Mobile Menu Button */}
               <motion.button
-                className="md:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                className="md:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -159,14 +160,14 @@ export const Header: React.FC = () => {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className={`block w-full text-left px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200 ${
                       activeSection === item.href.slice(1)
                         ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400'
                         : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800'
@@ -179,14 +180,14 @@ export const Header: React.FC = () => {
                 ))}
 
                 {/* Mobile Social Links */}
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-center space-x-4">
+                <div className="pt-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-center space-x-6">
                   {socialLinks.map((link) => (
                     <motion.a
                       key={link.label}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+                      className="p-3 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                       aria-label={link.label}
@@ -200,6 +201,8 @@ export const Header: React.FC = () => {
           )}
         </AnimatePresence>
       </motion.header>
+      {/* Spacer to account for fixed header */}
+      <div className="h-16"></div>
     </>
   );
 };

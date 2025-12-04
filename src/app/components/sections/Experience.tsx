@@ -2,9 +2,10 @@
 
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Calendar, Briefcase, Building } from 'lucide-react';
-import { EXPERIENCE_DATA, TimelineItem } from '@/lib/constants';
+import { MapPin, Calendar, Building } from 'lucide-react';
+import { EXPERIENCE_DATA } from '@/lib/constants';
 import { format } from 'date-fns';
+import { TimelineItem } from '@/lib/types';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -53,7 +54,7 @@ const calculateDuration = (startDate: string, endDate?: string): string => {
   }
 };
 
-const TimelineItem: React.FC<{
+const TimelineItemComponent: React.FC<{
   item: TimelineItem;
   index: number;
   isLeft: boolean;
@@ -104,7 +105,7 @@ const TimelineItem: React.FC<{
           </div>
 
           <ul className="space-y-2 mb-4 text-slate-700 dark:text-slate-300">
-            {item.description.map((desc, descIndex) => (
+            {item.description.map((desc: string, descIndex: number) => (
               <li key={descIndex} className="flex items-start">
                 <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                 <span className="text-sm leading-relaxed">{desc}</span>
@@ -113,7 +114,7 @@ const TimelineItem: React.FC<{
           </ul>
 
           <div className={`flex flex-wrap gap-2 ${isLeft ? 'md:justify-end' : ''}`}>
-            {item.technologies.map((tech) => (
+            {item.technologies.map((tech: string) => (
               <span
                 key={tech}
                 className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium"
@@ -150,7 +151,7 @@ const TimelineItem: React.FC<{
   );
 };
 
-const MobileTimelineItem: React.FC<{
+const MobileTimelineItemComponent: React.FC<{
   item: TimelineItem;
   index: number;
 }> = ({ item, index }) => {
@@ -208,7 +209,7 @@ const MobileTimelineItem: React.FC<{
         </div>
 
         <ul className="space-y-2 mb-4 text-slate-700 dark:text-slate-300">
-          {item.description.map((desc, descIndex) => (
+          {item.description.map((desc: string, descIndex: number) => (
             <li key={descIndex} className="flex items-start">
               <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
               <span className="text-sm leading-relaxed">{desc}</span>
@@ -217,7 +218,7 @@ const MobileTimelineItem: React.FC<{
         </ul>
 
         <div className="flex flex-wrap gap-2">
-          {item.technologies.map((tech) => (
+          {item.technologies.map((tech: string) => (
             <span
               key={tech}
               className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium"
@@ -242,19 +243,19 @@ export const Experience: React.FC = () => {
   }));
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-slate-800">
+    <section id="experience" className="py-16 sm:py-20 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">
             Professional Experience
           </h2>
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
             My journey through software development, building scalable solutions and gaining expertise
             in various technologies and industries.
           </p>
@@ -273,7 +274,7 @@ export const Experience: React.FC = () => {
 
             {/* Timeline Items */}
             {timelineItems.map((item, index) => (
-              <TimelineItem
+              <TimelineItemComponent
                 key={item.id}
                 item={item}
                 index={index}
@@ -292,7 +293,7 @@ export const Experience: React.FC = () => {
             ref={ref}
           >
             {timelineItems.map((item, index) => (
-              <MobileTimelineItem
+              <MobileTimelineItemComponent
                 key={item.id}
                 item={item}
                 index={index}
@@ -303,32 +304,32 @@ export const Experience: React.FC = () => {
 
         {/* Summary Stats */}
         <motion.div
-          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <div className="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-xl">
-            <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+          <div className="text-center p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 sm:mb-2">
               3+
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Years Experience
             </div>
           </div>
-          <div className="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-xl">
-            <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+          <div className="text-center p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1 sm:mb-2">
               5+
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Projects Delivered
             </div>
           </div>
-          <div className="text-center p-6 bg-slate-50 dark:bg-slate-900 rounded-xl">
-            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+          <div className="text-center p-4 sm:p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+            <div className="text-2xl sm:text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1 sm:mb-2">
               10+
             </div>
-            <div className="text-sm text-slate-600 dark:text-slate-400">
+            <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Technologies Used
             </div>
           </div>

@@ -122,9 +122,18 @@ export const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 bg-slate-800/80 rounded-lg hover:bg-slate-700 transition-colors duration-200 shadow-sm"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      y: -2,
+                      boxShadow: '0 10px 25px rgba(0,0,0,0.2)'
+                    }}
                     whileTap={{ scale: 0.9 }}
                     aria-label={link.label}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 300,
+                      damping: 15
+                    }}
                   >
                     <link.icon className="w-5 h-5" />
                   </motion.a>
@@ -231,6 +240,17 @@ export const Footer: React.FC = () => {
               onClick={scrollToTop}
               className="shadow-lg hover:shadow-xl transition-shadow duration-200"
               aria-label="Scroll to top"
+              whileHover={{ 
+                scale: 1.1,
+                y: -2,
+                boxShadow: '0 10px 25px rgba(0,0,0,0.3)'
+              }}
+              whileTap={{ scale: 0.9 }}
+              transition={{
+                type: 'spring',
+                stiffness: 300,
+                damping: 15
+              }}
             >
               Top
             </Button>
