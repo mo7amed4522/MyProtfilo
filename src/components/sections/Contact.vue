@@ -268,7 +268,7 @@
 
               <!-- Email -->
               <a
-                href="mailto:khaled.mohamed@example.com"
+                href="mailto:eng.khaled4522@gmail.com"
                 class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="flex items-center justify-between mb-3">
@@ -392,8 +392,8 @@ const submitError = ref('')
 const contactInfo = [
   {
     label: 'Email',
-    value: 'khaled.mohamed@example.com',
-    href: 'mailto:khaled.mohamed@example.com',
+    value: 'eng.khaled4522@gmail.com',
+    href: 'mailto:eng.khaled4522@gmail.com',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>

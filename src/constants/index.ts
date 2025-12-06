@@ -191,7 +191,7 @@ export const PROJECTS_DATA: Project[] = [
 export const SOCIAL_LINKS = [
   { platform: 'GitHub', url: 'https://github.com/mo7amed4522', icon: 'Github', ariaLabel: 'GitHub Profile' },
   { platform: 'GitLab', url: 'https://gitlab.com/mo7amed24', icon: 'Gitlab', ariaLabel: 'GitLab Profile' },
-  { platform: 'Email', url: 'mailto:khaled.mohamed@example.com', icon: 'Mail', ariaLabel: 'Send Email' },
+  { platform: 'Email', url: 'mailto:eng.khaled4522@gmail.com', icon: 'Mail', ariaLabel: 'Send Email' },
   { platform: 'LinkedIn', url: '#', icon: 'Linkedin', ariaLabel: 'LinkedIn Profile' },
 ];
 
@@ -199,6 +199,6 @@ export const CONTACT_INFO = {
   name: 'Khaled Mohamed',
   title: 'Backend & Mobile Engineer',
   location: 'Dubai, UAE',
-  email: 'khaled.mohamed@example.com',
+  email: 'eng.khaled4522@gmail.com',
   github: 'mo7amed4522',
 };
