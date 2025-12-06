@@ -92,7 +92,7 @@
               <span class="flex items-center">
                 <span>{{ option.label }}</span>
                 <span v-if="option.value !== 'all'" class="ml-2 px-2 py-0.5 bg-white/20 rounded-full text-xs">
-                  {{ projectCounts[option.value] || 0 }}
+                  {{ projectCounts[option.value as keyof typeof projectCounts] || 0 }}
                 </span>
               </span>
             </button>
