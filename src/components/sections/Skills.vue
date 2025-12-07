@@ -119,14 +119,14 @@
             <div class="flex items-center justify-between">
               <div>
                 <p class="text-sm opacity-90 font-medium">Years Exp</p>
-                <p class="text-3xl font-bold mt-2">8+</p>
+                <p class="text-3xl font-bold mt-2">4+</p>
               </div>
               <svg class="w-10 h-10 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
             <div class="mt-4 text-sm opacity-90">
-              <span>Most experienced in JavaScript & Go</span>
+              <span>Most experienced in Mobile Application & Backend</span>
             </div>
           </div>
         </div>
@@ -445,7 +445,7 @@
                   <div class="flex items-center space-x-3 p-2 bg-white/50 dark:bg-slate-700/50 rounded-lg">
                     <div class="w-3 h-3 rounded-full bg-orange-500"></div>
                     <div>
-                      <p class="text-sm font-medium text-slate-900 dark:text-white">Learning (<60%)</p>
+                      <p class="text-sm font-medium text-slate-900 dark:text-white">Learning (60-90%)</p>
                       <p class="text-xs text-slate-600 dark:text-slate-400">Currently learning</p>
                     </div>
                   </div>
@@ -512,10 +512,10 @@ const skillsData = ref([
     title: 'Backend Development',
     color: 'blue',
     skills: [
-      { name: 'Go', proficiency: 95, years: 5 },
-      { name: 'Node.js', proficiency: 90, years: 6 },
-      { name: 'Python', proficiency: 85, years: 5 },
-      { name: 'REST APIs', proficiency: 92, years: 6 },
+      { name: 'Go', proficiency: 95, years: 3 },
+      { name: 'Node.js', proficiency: 90, years: 3 },
+      { name: 'Python', proficiency: 85, years: 2 },
+      { name: 'REST APIs', proficiency: 92, years: 4 },
       { name: 'gRPC', proficiency: 88, years: 4 },
       { name: 'PostgreSQL', proficiency: 82, years: 4 },
       { name: 'Redis', proficiency: 85, years: 4 }
@@ -525,13 +525,13 @@ const skillsData = ref([
     title: 'Frontend Development',
     color: 'green',
     skills: [
-      { name: 'Vue.js', proficiency: 95, years: 5 },
-      { name: 'React', proficiency: 85, years: 4 },
-      { name: 'TypeScript', proficiency: 90, years: 4 },
-      { name: 'JavaScript', proficiency: 95, years: 8 },
-      { name: 'Tailwind CSS', proficiency: 92, years: 3 },
+      { name: 'Vue.js', proficiency: 95, years: 2 },
+      { name: 'React', proficiency: 85, years: 1 },
+      { name: 'TypeScript', proficiency: 90, years: 3 },
+      { name: 'JavaScript', proficiency: 95, years: 3 },
+      { name: 'Tailwind CSS', proficiency: 92, years: 1 },
       { name: 'Vite', proficiency: 88, years: 3 },
-      { name: 'Next.js', proficiency: 80, years: 3 }
+      { name: 'Next.js', proficiency: 80, years: 2 }
     ]
   },
   {
@@ -542,7 +542,7 @@ const skillsData = ref([
       { name: 'AWS', proficiency: 80, years: 3 },
       { name: 'CI/CD', proficiency: 88, years: 4 },
       { name: 'Kubernetes', proficiency: 75, years: 2 },
-      { name: 'Linux', proficiency: 90, years: 7 },
+      { name: 'Linux', proficiency: 90, years: 3 },
       { name: 'Terraform', proficiency: 72, years: 2 },
       { name: 'Git', proficiency: 95, years: 8 }
     ]
@@ -551,9 +551,9 @@ const skillsData = ref([
     title: 'Mobile Development',
     color: 'orange',
     skills: [
-      { name: 'Flutter', proficiency: 88, years: 4 },
-      { name: 'React Native', proficiency: 85, years: 3 },
-      { name: 'Dart', proficiency: 90, years: 4 },
+      { name: 'Flutter', proficiency: 88, years: 5 },
+      { name: 'React Native', proficiency: 85, years: 1 },
+      { name: 'Dart', proficiency: 90, years: 5 },
       { name: 'Firebase', proficiency: 82, years: 3 }
     ]
   }

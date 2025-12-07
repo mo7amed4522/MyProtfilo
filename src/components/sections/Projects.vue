@@ -77,11 +77,11 @@
       <div class="mb-10">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Browse Projects</h2>
-          <div class="flex space-x-2 overflow-x-auto pb-2">
+          <div class="filter-tabs flex space-x-2 overflow-x-auto pb-2">
             <button
               v-for="option in filterOptions"
               :key="option.value"
-              @click="filter === option.value"
+              @click="filter = option.value"
               :class="[
                 'flex items-center whitespace-nowrap px-4 py-2 rounded-full font-medium transition-all duration-300',
                 filter === option.value
@@ -284,79 +284,136 @@ const filter = ref<'all' | 'mobile' | 'backend' | 'fullstack'>('all')
 const PROJECTS_DATA: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Mobile App',
-    description: 'A complete e-commerce solution with real-time inventory management, payment processing, and user analytics.',
+    title: 'Eye',
+    description: 'Flutter playground app for experimenting with UI components, navigation, and Dart patterns.',
     category: 'mobile',
-    technologies: ['React Native', 'TypeScript', 'Redux', 'Firebase', 'Stripe'],
+    technologies: ['Flutter', 'Dart'],
     featured: true,
-    githubUrl: 'https://github.com/mo7amed4522/ecommerce-app',
-    liveUrl: 'https://ecommerce-demo.app',
-    status: 'completed',
-    complexity: 85,
-    completion: 100,
-    impact: 'High'
+    githubUrl: 'https://github.com/mo7amed4522/Eye',
+    status: 'in-progress',
+    complexity: 60,
+    completion: 70,
+    impact: 'Medium'
   },
   {
     id: 2,
-    title: 'Microservices API Gateway',
-    description: 'High-performance API gateway with load balancing, rate limiting, and authentication for microservices architecture.',
-    category: 'backend',
-    technologies: ['Node.js', 'Express', 'Redis', 'Docker', 'Kubernetes', 'JWT'],
-    featured: true,
-    githubUrl: 'https://github.com/mo7amed4522/api-gateway',
+    title: 'Templete iOS',
+    description: 'Swift template project providing a starter structure for new iOS apps with basic navigation.',
+    category: 'mobile',
+    technologies: ['Swift', 'iOS'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/Templete_ios',
+
     status: 'completed',
-    complexity: 90,
+    complexity: 50,
     completion: 100,
-    impact: 'Medium'
+    impact: 'Low'
   },
   {
     id: 3,
-    title: 'Real-Time Dashboard',
-    description: 'Interactive dashboard for monitoring system metrics with real-time updates and customizable widgets.',
-    category: 'fullstack',
-    technologies: ['Vue.js', 'TypeScript', 'Socket.io', 'D3.js', 'PostgreSQL'],
+    title: 'real_state',
+    description: 'Flutter real estate app with property listing and detail views, demonstrating clean UI and state handling.',
+    category: 'mobile',
+    technologies: ['Flutter', 'Dart'],
     featured: true,
-    githubUrl: 'https://github.com/mo7amed4522/realtime-dashboard',
-    liveUrl: 'https://dashboard-demo.app',
+    githubUrl: 'https://github.com/mo7amed4522/real_state',
+
     status: 'in-progress',
     complexity: 75,
     completion: 80,
-    impact: 'Medium'
-  },
-  {
-    id: 4,
-    title: 'Health & Fitness Tracker',
-    description: 'Mobile app for tracking workouts, nutrition, and health metrics with AI-powered recommendations.',
-    category: 'mobile',
-    technologies: ['Flutter', 'Dart', 'Firebase', 'ML Kit', 'HealthKit'],
-    githubUrl: 'https://github.com/mo7amed4522/fitness-tracker',
-    status: 'completed',
-    complexity: 70,
-    completion: 100,
     impact: 'High'
   },
   {
+    id: 4,
+    title: 'Driver-App',
+    description: 'Native iOS driver app in Objective-C, part of a ride-hailing or delivery solution.',
+    category: 'mobile',
+    technologies: ['Objective-C', 'iOS'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/Driver-App',
+
+    status: 'completed',
+    complexity: 70,
+    completion: 100,
+    impact: 'Medium'
+  },
+  {
     id: 5,
-    title: 'AI Content Generator API',
-    description: 'REST API for AI-powered content generation with support for multiple models and customization.',
-    category: 'backend',
-    technologies: ['Python', 'FastAPI', 'OpenAI', 'Celery', 'PostgreSQL'],
-    githubUrl: 'https://github.com/mo7amed4522/ai-content-api',
+    title: 'Ridy-App',
+    description: 'Ride-hailing mobile application codebase used for customizing booking flows and UI.',
+    category: 'mobile',
+    technologies: ['Flutter', 'Dart'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/Ridy-App',
     status: 'in-progress',
-    complexity: 85,
+    complexity: 65,
+    completion: 60,
+    impact: 'Medium'
+  },
+  {
+    id: 6,
+    title: 'taxi_backend',
+    description: 'TypeScript backend for a taxi platform, defining APIs for trips, users, and drivers.',
+    category: 'backend',
+    technologies: ['TypeScript', 'Node.js'],
+    featured: true,
+    githubUrl: 'https://github.com/mo7amed4522/taxi_backend',
+    status: 'in-progress',
+    complexity: 80,
     completion: 65,
     impact: 'High'
   },
   {
-    id: 6,
-    title: 'Project Management Suite',
-    description: 'Comprehensive project management tool with task tracking, team collaboration, and reporting features.',
+    id: 7,
+    title: 'User-App',
+    description: 'Flutter client app for end users, including authentication, profile, and API integration.',
+    category: 'mobile',
+    technologies: ['Flutter', 'Dart', 'REST API'],
+    featured: true,
+    githubUrl: 'https://github.com/mo7amed4522/User-App',
+    status: 'in-progress',
+    complexity: 70,
+    completion: 75,
+    impact: 'High'
+  },
+  {
+    id: 8,
+    title: 'backend_chat',
+    description: 'TypeScript chat backend that exposes messaging endpoints and real-time capabilities for clients.',
+    category: 'backend',
+    technologies: ['TypeScript', 'Node.js'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/backend_chat',
+
+    status: 'in-progress',
+    complexity: 70,
+    completion: 60,
+    impact: 'Medium'
+  },
+  {
+    id: 9,
+    title: 'health_life',
+    description: 'Flutter health application used to explore forms, navigation flow, and theming for wellness tracking.',
+    category: 'mobile',
+    technologies: ['Flutter', 'Dart'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/health_life',
+
+    status: 'in-progress',
+    complexity: 55,
+    completion: 60,
+    impact: 'Medium'
+  },
+  {
+    id: 10,
+    title: 'odoo-docker',
+    description: 'Dockerized environment for running Odoo, simplifying local ERP development and testing.',
     category: 'fullstack',
-    technologies: ['React', 'NestJS', 'GraphQL', 'MongoDB', 'Redis'],
-    githubUrl: 'https://github.com/mo7amed4522/project-management',
-    liveUrl: 'https://pm-demo.app',
+    technologies: ['Python', 'Docker', 'Odoo'],
+    featured: false,
+    githubUrl: 'https://github.com/mo7amed4522/odoo-docker',
     status: 'completed',
-    complexity: 80,
+    complexity: 65,
     completion: 100,
     impact: 'Medium'
   }

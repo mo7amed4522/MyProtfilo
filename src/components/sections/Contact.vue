@@ -41,7 +41,7 @@
               <!-- Name Field -->
               <div class="group">
                 <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  Your Name
+                  Your Name here !
                 </label>
                 <div class="relative">
                   <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -216,7 +216,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- WhatsApp -->
               <a
-                href="https://wa.me/971501234567"
+                href="https://wa.me/544523695"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:-translate-y-1"
@@ -242,7 +242,7 @@
 
               <!-- Telegram -->
               <a
-                href="https://t.me/khaled_mohamed"
+                href="https://t.me/mo7amed4522"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:-translate-y-1"
@@ -292,7 +292,7 @@
 
               <!-- Call -->
               <a
-                href="tel:+971501234567"
+                href="tel:+0544523695"
                 class="group bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div class="flex items-center justify-between mb-3">
@@ -410,15 +410,15 @@ const contactInfo = [
   {
     label: 'LinkedIn',
     value: 'khaled-mohamed',
-    href: 'https://linkedin.com/in/khaled-mohamed',
+    href: 'https://www.linkedin.com/in/khaled-mohamed-abdou-318378254/',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>`
   },
   {
     label: 'Phone',
-    value: '+971 50 123 4567',
-    href: 'tel:+971501234567',
+    value: '+971 54 452 3695',
+    href: 'tel:+0544523695',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
           </svg>`
@@ -471,22 +471,22 @@ const handleSubmit = async () => {
   submitError.value = ''
 
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    // In a real implementation, you would send the form data to your backend
-    submitSuccess.value = true
-    formData.value = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.value.name,
+        email: formData.value.email,
+        subject: formData.value.subject,
+        message: formData.value.message
+      })
+    })
+    if (!res.ok) {
+      throw new Error('Request failed')
     }
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
-      submitSuccess.value = false
-    }, 5000)
+    submitSuccess.value = true
+    formData.value = { name: '', email: '', subject: '', message: '' }
+    setTimeout(() => { submitSuccess.value = false }, 5000)
   } catch (error) {
     submitError.value = 'Failed to send message. Please try again.'
   } finally {

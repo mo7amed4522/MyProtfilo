@@ -21,7 +21,7 @@
       <div class="mb-12">
         <div class="flex overflow-x-auto space-x-4 pb-4">
           <button
-            v-for="(item, index) in experienceItems"
+            v-for="(item) in experienceItems"
             :key="item.id"
             @click="scrollToExperience(item.id)"
             class="flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
@@ -434,8 +434,22 @@ const scrollToContact = () => {
 }
 
 const downloadResume = () => {
-  console.log('Downloading resume...')
-  // Implement resume download logic here
+  console.log('Downloading resume...');
+  
+  // Direct download link from Google Drive
+  const fileId = '1W4TL5lk4iNEVq67W3FMTFfqJFrwxw3Ck';
+  const directDownloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+  
+  // Create a temporary anchor element to trigger download
+  const link = document.createElement('a');
+  link.href = directDownloadLink;
+  link.setAttribute('download', 'CV.pdf'); // Custom filename
+  link.setAttribute('target', '_blank'); // Open in new tab
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  console.log('Resume download initiated');
 }
 
 onMounted(() => {
