@@ -21,11 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true  # This will enable Pages if not already enabled
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
