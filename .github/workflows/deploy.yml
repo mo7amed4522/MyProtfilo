@@ -6,12 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  permissions:
   actions: read
   contents: read
   pages: write
   id-token: write
-  checks: write
 
 concurrency:
   group: pages
@@ -23,6 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,12 +37,14 @@ jobs:
       - name: Build
         env:
           BASE_URL: '/${{ github.event.repository.name }}/'
+          VITE_DEPLOY_URL: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/'
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+          artifact_name: github-pages
 
   deploy:
     environment:
