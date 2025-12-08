@@ -2,7 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
+<<<<<<< HEAD
     branches: [main, master]
+=======
+    branches: [main]
+>>>>>>> 8582e9b96663c6411eb5a73af24a70b333f20f08
   workflow_dispatch:
 
 permissions:
@@ -21,9 +25,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+<<<<<<< HEAD
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+=======
+>>>>>>> 8582e9b96663c6411eb5a73af24a70b333f20f08
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

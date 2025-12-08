@@ -96,7 +96,8 @@
             class="inline-flex items-center space-x-2 px-4 py-2 bg-white/20 dark:bg-white/10 backdrop-blur-sm rounded-full"
           >
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span class="text-sm font-medium text-slate-700 dark:text-slate-300"
+            <span
+              class="text-sm font-medium text-slate-700 dark:text-slate-300"
               >{{ t("hero.availableForOpportunities") }}</span
             >
           </div>
@@ -105,9 +106,9 @@
           <h1
             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
-            <span class="block text-slate-900 dark:text-white"
-              >{{ t("hero.buildingThe") }}</span
-            >
+            <span class="block text-slate-900 dark:text-white">{{
+              t("hero.buildingThe")
+            }}</span>
             <span
               class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
             >
@@ -123,12 +124,13 @@
             <span class="font-semibold text-blue-600 dark:text-blue-400"
               >Go</span
             >,
-            <span class="font-semibold text-green-600 dark:text-green-400"
-              >{{ t("hero.Flutter") }}</span
+            <span class="font-semibold text-green-600 dark:text-green-400">{{
+              t("hero.Flutter")
+            }}</span
             >, {{ t("hero.and") }}
-            <span class="font-semibold text-purple-600 dark:text-purple-400"
-              >{{ t("hero.CloudTechnologies") }}</span
-            >
+            <span class="font-semibold text-purple-600 dark:text-purple-400">{{
+              t("hero.CloudTechnologies")
+            }}</span>
           </p>
 
           <!-- Description -->

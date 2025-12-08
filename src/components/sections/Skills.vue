@@ -9,12 +9,12 @@
         <h1
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4"
         >
-          {{ $t('skils.technicalSkillsDashboard') }}
+          {{ $t("skils.technicalSkillsDashboard") }}
         </h1>
         <p
           class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto"
         >
-          {{ $t('skils.interactiveVisualization') }}
+          {{ $t("skils.interactiveVisualization") }}
         </p>
 
         <!-- View Mode Toggle -->
@@ -44,7 +44,7 @@
                   d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                 ></path>
               </svg>
-              {{ $t('skils.dashboard') }}
+              {{ $t("skils.dashboard") }}
             </button>
             <button
               :class="[
@@ -68,7 +68,7 @@
                   d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                 ></path>
               </svg>
-              {{ $t('skils.charts') }}
+              {{ $t("skils.charts") }}
             </button>
             <button
               :class="[
@@ -92,7 +92,7 @@
                   d="M4 6h16M4 10h16M4 14h16M4 18h16"
                 ></path>
               </svg>
-              {{ $t('skils.list') }}
+              {{ $t("skils.list") }}
             </button>
           </div>
         </div>
@@ -107,7 +107,9 @@
           >
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-sm opacity-90 font-medium">{{ $t('skils.totalSkills') }}</p>
+                <p class="text-sm opacity-90 font-medium">
+                  {{ $t("skils.totalSkills") }}
+                </p>
                 <p class="text-3xl font-bold mt-2">{{ totalSkills }}</p>
               </div>
               <svg
@@ -127,7 +129,7 @@
             <div class="mt-4 text-sm opacity-90">
               <span class="inline-flex items-center">
                 <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                +{{ newSkillsThisYear }} {{ $t('skils.year') }}
+                +{{ newSkillsThisYear }} {{ $t("skils.year") }}
               </span>
             </div>
           </div>
@@ -137,7 +139,9 @@
           >
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-sm opacity-90 font-medium">{{ $t('skils.avgProficiency') }}</p>
+                <p class="text-sm opacity-90 font-medium">
+                  {{ $t("skils.avgProficiency") }}
+                </p>
                 <p class="text-3xl font-bold mt-2">{{ averageProficiency }}%</p>
               </div>
               <svg
@@ -169,7 +173,9 @@
           >
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-sm opacity-90 font-medium">{{ $t('skils.categories') }}</p>
+                <p class="text-sm opacity-90 font-medium">
+                  {{ $t("skils.categories") }}
+                </p>
                 <p class="text-3xl font-bold mt-2">{{ skillCategories }}</p>
               </div>
               <svg
@@ -187,15 +193,15 @@
               </svg>
             </div>
             <div class="mt-4 flex flex-wrap gap-2">
-              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs"
-                >{{ $t('skils.backend') }}</span
-              >
-              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs"
-                >{{ $t('skils.frontend') }}</span
-              >
-              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs"
-                >{{ $t('skils.mobile') }}</span
-              >
+              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs">{{
+                $t("skils.backend")
+              }}</span>
+              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs">{{
+                $t("skils.frontend")
+              }}</span>
+              <span class="px-2 py-1 bg-white/20 rounded-lg text-xs">{{
+                $t("skils.mobile")
+              }}</span>
             </div>
           </div>
 
@@ -204,7 +210,9 @@
           >
             <div class="flex items-center justify-between">
               <div>
-                <p class="text-sm opacity-90 font-medium">{{ $t('skils.yearsExperience') }}</p>
+                <p class="text-sm opacity-90 font-medium">
+                  {{ $t("skils.yearsExperience") }}
+                </p>
                 <p class="text-3xl font-bold mt-2">4+</p>
               </div>
               <svg
@@ -222,7 +230,9 @@
               </svg>
             </div>
             <div class="mt-4 text-sm opacity-90">
-              <span>{{ $t('skils.MostExperiencedInMobileApplicationAndBackend') }}</span>
+              <span>{{
+                $t("skils.MostExperiencedInMobileApplicationAndBackend")
+              }}</span>
             </div>
           </div>
         </div>
@@ -233,12 +243,12 @@
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
             <div class="flex items-center justify-between mb-6">
               <h2 class="text-xl font-bold text-slate-900 dark:text-white">
-                {{ $t('skils.technicalSkillsDashboard') }}
+                {{ $t("skils.technicalSkillsDashboard") }}
               </h2>
               <div class="flex items-center space-x-2">
-                <span class="text-sm text-slate-500 dark:text-slate-400"
-                  >{{ $t('skils.stackedView') }}</span
-                >
+                <span class="text-sm text-slate-500 dark:text-slate-400">{{
+                  $t("skils.stackedView")
+                }}</span>
                 <div class="w-3 h-3 rounded-full bg-blue-500"></div>
               </div>
             </div>
@@ -255,12 +265,12 @@
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6">
             <div class="flex items-center justify-between mb-6">
               <h2 class="text-xl font-bold text-slate-900 dark:text-white">
-                {{ $t('skils.skillDistribution') }}
+                {{ $t("skils.skillDistribution") }}
               </h2>
               <div class="flex items-center space-x-2">
-                <span class="text-sm text-slate-500 dark:text-slate-400"
-                  >{{ $t('skils.byCategory') }}</span
-                >
+                <span class="text-sm text-slate-500 dark:text-slate-400">{{
+                  $t("skils.byCategory")
+                }}</span>
                 <div class="w-3 h-3 rounded-full bg-purple-500"></div>
               </div>
             </div>
@@ -277,7 +287,7 @@
         <!-- Category Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
-            v-for="(category) in skillsData"
+            v-for="category in skillsData"
             :key="category.title"
             class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
           >
@@ -307,7 +317,7 @@
               <div
                 class="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 mb-1"
               >
-                <span>{{ $t('skils.overallProficiency') }}</span>
+                <span>{{ $t("skils.overallProficiency") }}</span>
                 <span>{{ Math.round(categoryAverage(category.skills)) }}%</span>
               </div>
               <div
@@ -362,7 +372,7 @@
                   v-if="category.skills.length > 3"
                   class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-lg text-xs font-medium"
                 >
-                  +{{ category.skills.length - 3 }} {{ $t('skils.more') }}
+                  +{{ category.skills.length - 3 }} {{ $t("skils.more") }}
                 </span>
               </div>
             </div>
@@ -380,12 +390,12 @@
             <h2
               class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
             >
-              {{ $t('skils.technicalSkillsDashboard') }}
+              {{ $t("skils.technicalSkillsDashboard") }}
             </h2>
             <div class="flex items-center space-x-2">
-              <span class="text-sm text-slate-500 dark:text-slate-400"
-                >{{ $t('skils.interactiveBarChart') }}</span
-              >
+              <span class="text-sm text-slate-500 dark:text-slate-400">{{
+                $t("skils.interactiveBarChart")
+              }}</span>
               <div class="w-3 h-3 rounded-full bg-blue-500"></div>
             </div>
           </div>
@@ -398,7 +408,7 @@
           </div>
           <div class="mt-4 text-sm text-slate-500 dark:text-slate-400">
             <p>
-              {{ $t('skils.chartDescription') }}
+              {{ $t("skils.chartDescription") }}
             </p>
           </div>
         </div>
@@ -409,12 +419,12 @@
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6">
             <div class="flex items-center justify-between mb-6">
               <h2 class="text-xl font-bold text-slate-900 dark:text-white">
-                {{ $t('skils.skillsComparison') }}
+                {{ $t("skils.skillsComparison") }}
               </h2>
               <div class="flex items-center space-x-2">
-                <span class="text-sm text-slate-500 dark:text-slate-400"
-                  >{{ $t('skils.radarAnalysis') }}</span
-                >
+                <span class="text-sm text-slate-500 dark:text-slate-400">{{
+                  $t("skils.radarAnalysis")
+                }}</span>
                 <div class="w-3 h-3 rounded-full bg-purple-500"></div>
               </div>
             </div>
@@ -431,12 +441,12 @@
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6">
             <div class="flex items-center justify-between mb-6">
               <h2 class="text-xl font-bold text-slate-900 dark:text-white">
-                {{ $t('skils.skillGrowth') }}
+                {{ $t("skils.skillGrowth") }}
               </h2>
               <div class="flex items-center space-x-2">
-                <span class="text-sm text-slate-500 dark:text-slate-400"
-                  >{{ $t('skils.timeline') }}</span
-                >
+                <span class="text-sm text-slate-500 dark:text-slate-400">{{
+                  $t("skils.timeline")
+                }}</span>
                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
             </div>
@@ -480,7 +490,7 @@
             ]"
             @click="activeCategory = 'all'"
           >
-            {{ $t('skils.allSkills') }}
+            {{ $t("skils.allSkills") }}
             <span class="ml-2 px-1.5 py-0.5 bg-white/20 rounded text-xs">
               {{ totalSkills }}
             </span>
@@ -492,7 +502,7 @@
           <!-- Skills List -->
           <div class="space-y-6">
             <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
-              {{ $t('skils.detailedSkills') }}
+              {{ $t("skils.detailedSkills") }}
             </h2>
             <div
               v-for="(category, index) in filteredCategories"
@@ -516,8 +526,8 @@
                       {{ category.title }}
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400">
-                      {{ $t('skils.totalSkills', category.skills.length) }}
-                      • {{ $t('skils.avg') }}:
+                      {{ $t("skils.totalSkills", category.skills.length) }}
+                      • {{ $t("skils.avg") }}:
                       {{ Math.round(categoryAverage(category.skills)) }}%
                     </p>
                   </div>
@@ -562,7 +572,7 @@
                         v-if="skill.years"
                         class="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full"
                       >
-                        {{ $t('skils.yearsExperience', skill.years) }}
+                        {{ $t("skils.yearsExperience", skill.years) }}
                       </span>
                       <span
                         class="text-sm font-bold"
@@ -595,7 +605,7 @@
                   v-if="category.skills.length > 6"
                   class="px-3 py-1.5 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-lg text-xs font-medium"
                 >
-                  +{{ category.skills.length - 6 }} {{ $t('skils.more') }}
+                  +{{ category.skills.length - 6 }} {{ $t("skils.more") }}
                 </span>
               </div>
             </div>
@@ -607,7 +617,7 @@
               <h2
                 class="text-2xl font-bold text-slate-900 dark:text-white mb-6"
               >
-                {{ $t('skils.proficiencySummary') }}
+                {{ $t("skils.proficiencySummary") }}
               </h2>
               <div class="space-y-6">
                 <div
@@ -649,7 +659,7 @@
                 class="mt-8 p-4 bg-gradient-to-r from-slate-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 rounded-xl"
               >
                 <h3 class="font-bold text-slate-900 dark:text-white mb-4">
-                  {{ $t('skils.skillLevelLegend') }}
+                  {{ $t("skils.skillLevelLegend") }}
                 </h3>
                 <div class="grid grid-cols-2 gap-4">
                   <div
@@ -660,10 +670,10 @@
                       <p
                         class="text-sm font-medium text-slate-900 dark:text-white"
                       >
-                        {{ $t('skils.expert', [90, 100]) }}
+                        {{ $t("skils.expert", [90, 100]) }}
                       </p>
                       <p class="text-xs text-slate-600 dark:text-slate-400">
-                        {{ $t('skils.masterLevelProficiency') }}
+                        {{ $t("skils.masterLevelProficiency") }}
                       </p>
                     </div>
                   </div>
@@ -675,10 +685,10 @@
                       <p
                         class="text-sm font-medium text-slate-900 dark:text-white"
                       >
-                        {{ $t('skils.advanced', [75, 89]) }}
+                        {{ $t("skils.advanced", [75, 89]) }}
                       </p>
                       <p class="text-xs text-slate-600 dark:text-slate-400">
-                        {{ $t('skils.professionalExperience') }}
+                        {{ $t("skils.professionalExperience") }}
                       </p>
                     </div>
                   </div>
@@ -690,10 +700,10 @@
                       <p
                         class="text-sm font-medium text-slate-900 dark:text-white"
                       >
-                        {{ $t('skils.intermediate', [60, 74]) }}
+                        {{ $t("skils.intermediate", [60, 74]) }}
                       </p>
                       <p class="text-xs text-slate-600 dark:text-slate-400">
-                        {{ $t('skils.workingKnowledge') }}
+                        {{ $t("skils.workingKnowledge") }}
                       </p>
                     </div>
                   </div>
@@ -705,10 +715,10 @@
                       <p
                         class="text-sm font-medium text-slate-900 dark:text-white"
                       >
-                        {{ $t('skils.learning', [60, 90]) }}
+                        {{ $t("skils.learning", [60, 90]) }}
                       </p>
                       <p class="text-xs text-slate-600 dark:text-slate-400">
-                        {{ $t('skils.currentlyLearning') }}
+                        {{ $t("skils.currentlyLearning") }}
                       </p>
                     </div>
                   </div>
@@ -720,7 +730,9 @@
             <div
               class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white"
             >
-              <h3 class="text-xl font-bold mb-4">{{ $t('skils.topSkills') }}</h3>
+              <h3 class="text-xl font-bold mb-4">
+                {{ $t("skils.topSkills") }}
+              </h3>
               <div class="space-y-3">
                 <div
                   v-for="skill in topSkills"

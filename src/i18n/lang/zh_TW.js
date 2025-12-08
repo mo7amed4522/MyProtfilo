@@ -11,7 +11,8 @@ export const zh_TW = {
     toggleMenu: "切換選單",
     backendMobileEngineer: "後端 & 移動工程師",
     khaledMohamed: "哈立德·穆罕默德",
-    passionateAbout: "对使用 Go、Flutter 和现代云技术构建可扩展解决方案充满热情。让我们一起创建一个 amazing 东西。",
+    passionateAbout:
+      "对使用 Go、Flutter 和现代云技术构建可扩展解决方案充满热情。让我们一起创建一个 amazing 东西。",
     connectWithMe: "与我联系：",
     stayUpdated: "保持更新：",
     getNotified: "获取新项目和文章的通知。",
@@ -35,7 +36,7 @@ export const zh_TW = {
     lastUpdated: "最后更新: ",
     madeInUAE: "在阿联酋构建 🇦🇪",
   },
-  footer:{
+  footer: {
     quickLinks: "快速链接",
     technologies: "技术",
     resources: "资源",
@@ -45,9 +46,10 @@ export const zh_TW = {
     email: "邮箱",
     thankYou: "感谢您订阅 {{email}}！",
   },
-      contact: {
+  contact: {
     letConnect: "让我们连接 & 合作",
-    whetherYouHaveAProjectInMind: "无论您是否有项目在脑海中，想讨论机会，或者只是想聊一聊技术，我都很想听听您的声音！",
+    whetherYouHaveAProjectInMind:
+      "无论您是否有项目在脑海中，想讨论机会，或者只是想聊一聊技术，我都很想听听您的声音！",
     sendAMessage: "发送消息",
     typicallyRespondWithin24Hours: "我通常在 24 小时内回复",
     yourNameHere: "您的姓名在这里！",
@@ -59,10 +61,12 @@ export const zh_TW = {
     sendMessage: "发送消息",
     contactInformation: "联系信息",
     instantConnect: "立即连接",
-    connectWithMeInstantly: "立即通过 WhatsApp、Telegram 或 Signal 等消息应用联系我。",
+    connectWithMeInstantly:
+      "立即通过 WhatsApp、Telegram 或 Signal 等消息应用联系我。",
     whatsApp: "WhatsApp",
     instantMessaging: "即时 messaging",
-    chatInstantlyForQuickQuestions: "立即通过 WhatsApp、Telegram 或 Signal 等消息应用联系我。",
+    chatInstantlyForQuickQuestions:
+      "立即通过 WhatsApp、Telegram 或 Signal 等消息应用联系我。",
     telegram: "Telegram",
     fastCommunication: "快速沟通",
     forDetailedDiscussionsAndFiles: "对于详细的讨论和文件，请使用联系表单。",
@@ -85,9 +89,10 @@ export const zh_TW = {
     subjectMustBeAtLeast3Characters: "主题必须至少包含 3 个字符",
     messageMustBeAtLeast10Characters: "消息必须至少包含 10 个字符",
   },
-    experience:{
+  experience: {
     professionalJourney: "职业生涯",
-    myCareerPathAndExperiences: "我的职业生涯路径和经历，塑造了我作为软件工程师的方式",
+    myCareerPathAndExperiences:
+      "我的职业生涯路径和经历，塑造了我作为软件工程师的方式",
     currentRole: "当前角色",
     present: "现在",
     technologiesAndTools: "技术和工具",
@@ -104,37 +109,57 @@ export const zh_TW = {
     technologiesUsed: "使用的技术",
     projects: "项目",
     readyToBuildSomethingAmazing: "准备构建一个 amazing 项目吗？",
-    letCollaborateOnYourNextProject: "让我们合作您的下一个项目，创建有影响力的解决方案 \n 在一起。",
+    letCollaborateOnYourNextProject:
+      "让我们合作您的下一个项目，创建有影响力的解决方案 \n 在一起。",
     getInTouch: "联系我",
     unitedArabEmirates: "阿拉伯联合酋长国",
-    goMonolithServiceOrientedArchitecture: "全职现场 Go 单体面向服务架构，用于企业后端。",
-    designedRESTfulAPIsWithGin: "使用 Gin 设计 RESTful APIs; 定义 gRPC 服务和 Protobuf 合同。",
-    builtPersistenceLayersWithGORM: "使用 GORM 构建持久层; 实现了干净的架构和测试。",
-    containerizedServicesWithDocker: "使用 Docker 容器化服务; 与 Kubernetes 部署合作。",
-    implementedObservabilityAndCI_CD: "实现了可观察性和 CI/CD; 提高了可靠性和代码质量。",
+    goMonolithServiceOrientedArchitecture:
+      "全职现场 Go 单体面向服务架构，用于企业后端。",
+    designedRESTfulAPIsWithGin:
+      "使用 Gin 设计 RESTful APIs; 定义 gRPC 服务和 Protobuf 合同。",
+    builtPersistenceLayersWithGORM:
+      "使用 GORM 构建持久层; 实现了干净的架构和测试。",
+    containerizedServicesWithDocker:
+      "使用 Docker 容器化服务; 与 Kubernetes 部署合作。",
+    implementedObservabilityAndCI_CD:
+      "实现了可观察性和 CI/CD; 提高了可靠性和代码质量。",
     sweden: "瑞典",
-    builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes: "构建和维护 RESTful APIs 和无服务器后端服务，使用 Next.js API 路由。",
-    integratedThirdPartyServicesAndAuthenticationSystems: "集成了第三方服务、身份验证系统（OAuth、JWT）和支付网关。",
-    workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment: "使用 Vercel、AWS 和 Firebase 等云服务进行托管和部署。",
-    optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB: "优化数据库操作并管理后端逻辑，使用 PostgreSQL、MySQL 和 MongoDB。",
+    builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes:
+      "构建和维护 RESTful APIs 和无服务器后端服务，使用 Next.js API 路由。",
+    integratedThirdPartyServicesAndAuthenticationSystems:
+      "集成了第三方服务、身份验证系统（OAuth、JWT）和支付网关。",
+    workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment:
+      "使用 Vercel、AWS 和 Firebase 等云服务进行托管和部署。",
+    optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB:
+      "优化数据库操作并管理后端逻辑，使用 PostgreSQL、MySQL 和 MongoDB。",
     egypt: "埃及",
-    customizedAndExtendedOdooModules: "定制和扩展 Odoo 模块（销售、库存、会计、采购）以符合业务需求。",
-    developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL: "使用 Python、XML 和 PostgreSQL 开发和维护自定义模块。",
-    managedDatabaseMigrationsAndPerformanceOptimization: "管理数据库迁移和性能优化; 与移动应用团队合作，确保无缝的 ERP 和移动集成。",
+    customizedAndExtendedOdooModules:
+      "定制和扩展 Odoo 模块（销售、库存、会计、采购）以符合业务需求。",
+    developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL:
+      "使用 Python、XML 和 PostgreSQL 开发和维护自定义模块。",
+    managedDatabaseMigrationsAndPerformanceOptimization:
+      "管理数据库迁移和性能优化; 与移动应用团队合作，确保无缝的 ERP 和移动集成。",
     uae: "阿拉伯联合酋长国",
-    engineeredCrossPlatformMobileAppUsingFlutter: "使用 Flutter 引擎化了跨平台移动应用，减少了开发时间 40%，并提升了用户参与度 30%。",
-    developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms: "开发并部署了多个功能丰富的 Flutter 应用程序，用于 Android 和 iOS 平台。",
-    integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs: "集成了 RESTful APIs、WebSocket、Firebase 服务和第三方 SDK。",
-    implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod: "实现了干净的架构和状态管理解决方案，如 Provider、Bloc 和 Riverpod。",
-    ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden: "确保了高代码质量，通过测试（单元、集成、黄金）和版本控制（Git、GitHub）。",
-    collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures: "与跨功能团队合作，定义需求、设计架构并实现功能。",
-    activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards: "主动参与代码审查，提供反馈并确保代码质量标准。",
+    engineeredCrossPlatformMobileAppUsingFlutter:
+      "使用 Flutter 引擎化了跨平台移动应用，减少了开发时间 40%，并提升了用户参与度 30%。",
+    developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms:
+      "开发并部署了多个功能丰富的 Flutter 应用程序，用于 Android 和 iOS 平台。",
+    integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs:
+      "集成了 RESTful APIs、WebSocket、Firebase 服务和第三方 SDK。",
+    implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod:
+      "实现了干净的架构和状态管理解决方案，如 Provider、Bloc 和 Riverpod。",
+    ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden:
+      "确保了高代码质量，通过测试（单元、集成、黄金）和版本控制（Git、GitHub）。",
+    collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures:
+      "与跨功能团队合作，定义需求、设计架构并实现功能。",
+    activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards:
+      "主动参与代码审查，提供反馈并确保代码质量标准。",
     month: "月",
     year: "年",
     downloadingResume: "下载简历...",
     resumeDownloadInitiated: "简历下载已初始化",
   },
-      hero: {
+  hero: {
     availableForOpportunities: "可用于机会",
     buildingThe: "构建 ",
     futureOfTech: "未来的技术",
@@ -142,7 +167,8 @@ export const zh_TW = {
     Flutter: "Flutter",
     and: "和",
     CloudTechnologies: "云技术",
-    description: "凭借三年多的经验，我能够构建稳健的后端系统。\n并致力于打造流畅的移动体验。热衷于解决问题\n用优雅的解决方案解决复杂问题，并不断突破界限\n软件工程的可能性。",
+    description:
+      "凭借三年多的经验，我能够构建稳健的后端系统。\n并致力于打造流畅的移动体验。热衷于解决问题\n用优雅的解决方案解决复杂问题，并不断突破界限\n软件工程的可能性。",
     yearsExperience: "多年经验",
     projects: "项目",
     satisfaction: "客户满意度",
@@ -158,7 +184,7 @@ export const zh_TW = {
     downloadingResume: "下载简历...",
     resumeDownloadInitiated: "简历下载已初始化",
   },
-      project: {
+  project: {
     title: "项目作品集",
     description: "探索我的创新项目集合，涵盖移动、网络和 \n后端开发。",
     totalProjects: "总项目",
@@ -173,36 +199,46 @@ export const zh_TW = {
     impactScore: "影响分数",
     viewDetails: "查看详情",
     wantToSeeMore: "想查看更多吗？",
-    exploreAllProjects: "探索我的所有项目、贡献和开源工作\n在 GitHub 和 GitLab 上",
+    exploreAllProjects:
+      "探索我的所有项目、贡献和开源工作\n在 GitHub 和 GitLab 上",
     viewGitHubPortfolio: "查看 GitHub 作品集",
     viewGitLabPortfolio: "查看 GitLab 作品集",
     eye: "我的眼睛",
     eyeDescription: "Flutter 实验应用，用于探索 UI 组件、导航和 Dart 模式。",
     templateiOS: "Template iOS",
-    templateiOSDescription: "Swift 模板项目，为新的 iOS 应用提供基础结构，包括基本导航。",
+    templateiOSDescription:
+      "Swift 模板项目，为新的 iOS 应用提供基础结构，包括基本导航。",
     realState: "房地产应用",
-    realStateDescription: "Flutter 房地产应用，包含房产列表和详细视图，展示了清晰的 UI 和状态处理。",
+    realStateDescription:
+      "Flutter 房地产应用，包含房产列表和详细视图，展示了清晰的 UI 和状态处理。",
     driverApp: "司机应用",
-    driverAppDescription: "Flutter 司机应用，用于管理行程、司机和乘客，包括实时位置跟踪和通知。",
+    driverAppDescription:
+      "Flutter 司机应用，用于管理行程、司机和乘客，包括实时位置跟踪和通知。",
     ridyApp: "Ridy App",
-    ridyAppDescription: "Flutter ridy 应用，适用于网约车或送货服务，具有用户身份验证、实时跟踪和支付集成功能。",
+    ridyAppDescription:
+      "Flutter ridy 应用，适用于网约车或送货服务，具有用户身份验证、实时跟踪和支付集成功能。",
     taxiBackend: "出租车后端",
-    taxiBackendDescription: "出租车后端 API，处理用户认证、行程请求、司机分配和支付处理。",
+    taxiBackendDescription:
+      "出租车后端 API，处理用户认证、行程请求、司机分配和支付处理。",
     userApp: "用户应用",
-    userAppDescription: "Flutter 客户端应用，用于最终用户，包括身份验证、个人资料和 API 集成。",
+    userAppDescription:
+      "Flutter 客户端应用，用于最终用户，包括身份验证、个人资料和 API 集成。",
     backendChat: "后端聊天",
-    backendChatDescription: "TypeScript 聊天后端，暴露消息端点和实时功能，用于客户端。",
+    backendChatDescription:
+      "TypeScript 聊天后端，暴露消息端点和实时功能，用于客户端。",
     healthLife: "健康生活",
-    healthLifeDescription: "Flutter 健康应用，用于探索表单、导航流程和主题，用于健康跟踪。",
+    healthLifeDescription:
+      "Flutter 健康应用，用于探索表单、导航流程和主题，用于健康跟踪。",
     odooDocker: "Odoo Docker",
-    odooDockerDescription: "Odoo Docker 环境，用于在本地运行 Odoo，简化 ERP 开发和测试。",
+    odooDockerDescription:
+      "Odoo Docker 环境，用于在本地运行 Odoo，简化 ERP 开发和测试。",
     allProjects: "所有项目",
     mobileApps: "移动应用",
     backendSystems: "后端系统",
     fullStack: "全栈",
     openingProjectDetails: "打开项目详情",
   },
-      skils:{
+  skils: {
     technicalSkillsDashboard: "技术技能仪表板",
     interactiveVisualization: "交互式可视化我的技术专长跨多个\n 领域",
     dashboard: "仪表板",
@@ -218,7 +254,8 @@ export const zh_TW = {
     devOps: "DevOps",
     cloud: "云",
     yearsExperience: "年经验",
-    MostExperiencedInMobileApplicationAndBackend: "最有经验的移动应用和后端开发",
+    MostExperiencedInMobileApplicationAndBackend:
+      "最有经验的移动应用和后端开发",
     stackedView: "堆积视图",
     technicalSkillsDashboard: "技术技能仪表板",
     skillDistribution: "技能分布",
@@ -226,7 +263,8 @@ export const zh_TW = {
     overallProficiency: "总专业水平",
     more: "更多",
     interactiveBarChart: "交互式条形图",
-    chartDescription: "悬停在条上查看详细的专业水平百分比。\n点击图例项切换类别。",
+    chartDescription:
+      "悬停在条上查看详细的专业水平百分比。\n点击图例项切换类别。",
     skillsComparison: "技能比较",
     radarAnalysis: "雷达分析",
     skillGrowth: "技能增长",
@@ -251,5 +289,5 @@ export const zh_TW = {
     frontendDevelopment: "前端开发",
     devOpsAndCloud: "DevOps & Cloud",
     mobileDevelopment: "移动开发",
-  }
+  },
 };

@@ -163,7 +163,9 @@
                         <span
                           >{{ formatDate(item.startDate) }} -
                           {{
-                            item.endDate ? formatDate(item.endDate) : t("experience.present")
+                            item.endDate
+                              ? formatDate(item.endDate)
+                              : t("experience.present")
                           }}</span
                         >
                       </div>
@@ -244,25 +246,29 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div class="flex items-center space-x-2">
                         <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span class="text-sm text-slate-600 dark:text-slate-300"
+                        <span
+                          class="text-sm text-slate-600 dark:text-slate-300"
                           >{{ t("experience.enterpriseBackends") }}</span
                         >
                       </div>
                       <div class="flex items-center space-x-2">
                         <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span class="text-sm text-slate-600 dark:text-slate-300"
+                        <span
+                          class="text-sm text-slate-600 dark:text-slate-300"
                           >{{ t("experience.apiDevelopment") }}</span
                         >
                       </div>
                       <div class="flex items-center space-x-2">
                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span class="text-sm text-slate-600 dark:text-slate-300"
+                        <span
+                          class="text-sm text-slate-600 dark:text-slate-300"
                           >{{ t("experience.cloudInfrastructure") }}</span
                         >
                       </div>
                       <div class="flex items-center space-x-2">
                         <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <span class="text-sm text-slate-600 dark:text-slate-300"
+                        <span
+                          class="text-sm text-slate-600 dark:text-slate-300"
                           >{{ t("experience.teamCollaboration") }}</span
                         >
                       </div>
@@ -467,10 +473,16 @@ const experienceItems = [
     startDate: "2023-02",
     endDate: "2025-02",
     description: [
-      t("experience.builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes"),
+      t(
+        "experience.builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes",
+      ),
       t("experience.integratedThirdPartyServicesAndAuthenticationSystems"),
-      t("experience.workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment"),
-      t("experience.optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB"),
+      t(
+        "experience.workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment",
+      ),
+      t(
+        "experience.optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB",
+      ),
     ],
     technologies: [
       "Next.js",
@@ -493,7 +505,9 @@ const experienceItems = [
     endDate: "2023-06",
     description: [
       t("experience.customizedAndExtendedOdooModules"),
-      t("experience.developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL"),
+      t(
+        "experience.developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL",
+      ),
       t("experience.managedDatabaseMigrationsAndPerformanceOptimization"),
     ],
     technologies: ["Python", "XML", "PostgreSQL", "Odoo"],
@@ -509,12 +523,24 @@ const experienceItems = [
     endDate: "2023-02",
     description: [
       t("experience.engineeredCrossPlatformMobileAppUsingFlutter"),
-      t("experience.developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms"),
-      t("experience.integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs"),
-      t("experience.implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod"),
-      t("experience.ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden"),
-      t("experience.collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures"),
-      t("experience.activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards"),
+      t(
+        "experience.developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms",
+      ),
+      t(
+        "experience.integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs",
+      ),
+      t(
+        "experience.implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod",
+      ),
+      t(
+        "experience.ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden",
+      ),
+      t(
+        "experience.collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures",
+      ),
+      t(
+        "experience.activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards",
+      ),
     ],
     technologies: [
       "Flutter",

@@ -296,7 +296,11 @@
                     d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
                   ></path>
                 </svg>
-                {{ isSubmitting ? t("contact.sendingMessage") : t("contact.sendMessage") }}
+                {{
+                  isSubmitting
+                    ? t("contact.sendingMessage")
+                    : t("contact.sendMessage")
+                }}
               </button>
             </form>
           </div>
@@ -367,7 +371,9 @@
           >
             <div class="flex items-center justify-between mb-6">
               <div>
-                <h2 class="text-2xl font-bold mb-2">{{ t("contact.instantConnect") }}</h2>
+                <h2 class="text-2xl font-bold mb-2">
+                  {{ t("contact.instantConnect") }}
+                </h2>
                 <p class="text-blue-100 opacity-90">
                   {{ t("contact.connectWithMeInstantly") }}
                 </p>
