@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useThemeStore } from "../../stores/theme";
+import { Sunny, Moon } from "@element-plus/icons-vue";
 
 const themeStore = useThemeStore();
 const isDark = computed(() => themeStore.isDark);

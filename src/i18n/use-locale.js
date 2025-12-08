@@ -41,7 +41,7 @@ export function useLocale() {
  * Get the cached language
  */
 export function getCacheLang() {
-  return localStorage.getItem(I18N_CACHE_NAME) || "zh_CN";
+  return localStorage.getItem(I18N_CACHE_NAME) || "en";
 }
 
 /**

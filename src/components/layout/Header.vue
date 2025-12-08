@@ -115,6 +115,51 @@
             </select>
           </div>
 
+          <div class="lg:hidden relative">
+            <button
+              class="p-3 rounded-xl transition-all duration-300 hover:shadow-2xl bg-gradient-to-r from-blue-600/10 to-purple-600/10 dark:from-blue-600/20 dark:to-purple-600/20"
+              :aria-label="t('header.techStack')"
+              @click="isLangMenuOpen = !isLangMenuOpen"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4a8 8 0 108 8 8 8 0 00-8-8zm0 0c-3 0-5 4-5 8s2 8 5 8 5-4 5-8-2-8-5-8m0 0h0"
+                />
+              </svg>
+            </button>
+            <div
+              v-show="isLangMenuOpen"
+              class="absolute right-0 mt-2 w-36 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-2xl z-50"
+            >
+              <button
+                class="w-full px-4 py-2 text-left text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                @click="setLang('en')"
+              >
+                EN
+              </button>
+              <button
+                class="w-full px-4 py-2 text-left text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                @click="setLang('ar')"
+              >
+                AR
+              </button>
+              <button
+                class="w-full px-4 py-2 text-left text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700"
+                @click="setLang('zh_CN')"
+              >
+                CH
+              </button>
+            </div>
+          </div>
+
           <!-- Theme Toggle -->
           <div class="mr-2">
             <ThemeToggle />
@@ -258,6 +303,7 @@ import ThemeToggle from "../ui/ThemeToggle.vue";
 
 const isScrolled = ref(false);
 const isMobileMenuOpen = ref(false);
+const isLangMenuOpen = ref(false);
 const activeSection = ref("home");
 const { t, locale } = useI18n();
 const currentLang = ref(getCacheLang());
@@ -393,6 +439,12 @@ const changeLang = () => {
   locale.value = currentLang.value;
   setCacheLang(currentLang.value);
   document.documentElement.dir = currentLang.value === "ar" ? "rtl" : "ltr";
+};
+
+const setLang = (lang: string) => {
+  currentLang.value = lang;
+  changeLang();
+  isLangMenuOpen.value = false;
 };
 </script>
 
