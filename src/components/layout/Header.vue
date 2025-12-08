@@ -111,7 +111,7 @@
             >
               <option value="en">EN</option>
               <option value="ar">AR</option>
-              <option value="zh_CN">ZH-CN</option>
+              <option value="zh_CN">CH</option>
             </select>
           </div>
 
