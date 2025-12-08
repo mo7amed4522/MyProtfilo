@@ -212,7 +212,9 @@
                     </svg>
                   </div>
                   <div>
-                    <p class="text-sm text-slate-400">{{ t("header.email") }}</p>
+                    <p class="text-sm text-slate-400">
+                      {{ t("header.email") }}
+                    </p>
                     <a
                       href="mailto:eng.khaled4522@gmail.com"
                       class="text-slate-300 hover:text-blue-400 transition-colors"
@@ -240,7 +242,9 @@
                     </svg>
                   </div>
                   <div>
-                    <p class="text-sm text-slate-400">{{ t("header.location") }}</p>
+                    <p class="text-sm text-slate-400">
+                      {{ t("header.location") }}
+                    </p>
                     <p class="text-slate-300">{{ t("header.dubai") }}</p>
                   </div>
                 </div>
@@ -294,7 +298,9 @@
             <div class="flex items-center space-x-2">
               <span>© {{ currentYear }} {{ t("header.khaledMohamed") }}</span>
               <span class="hidden sm:inline">•</span>
-              <span class="hidden sm:inline">{{ t("header.allRightsReserved") }}</span>
+              <span class="hidden sm:inline">{{
+                t("header.allRightsReserved")
+              }}</span>
             </div>
 
             <div class="flex items-center space-x-2">
@@ -408,7 +414,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useI18n } from "vue-i18n";
-
 
 const { t, locale } = useI18n();
 const currentYear = ref(new Date().getFullYear());

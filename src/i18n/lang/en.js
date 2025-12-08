@@ -11,7 +11,8 @@ export const en = {
     toggleMenu: "Toggle menu",
     backendMobileEngineer: "Backend & Mobile Engineer",
     khaledMohamed: "Khaled Mohamed",
-    passionateAbout: "Passionate about building scalable solutions with Go, Flutter, and modern cloud technologies. Let's create something amazing together.",
+    passionateAbout:
+      "Passionate about building scalable solutions with Go, Flutter, and modern cloud technologies. Let's create something amazing together.",
     connectWithMe: "Connect with me:",
     stayUpdated: "Stay Updated:",
     getNotified: "Get notified about new projects and articles.",
@@ -35,7 +36,7 @@ export const en = {
     lastUpdated: "Last updated: ",
     madeInUAE: "Made in UAE 🇦🇪",
   },
-  footer:{
+  footer: {
     quickLinks: "Quick Links",
     technologies: "Technologies",
     resources: "Resources",
@@ -47,28 +48,34 @@ export const en = {
   },
   contact: {
     letConnect: "Let's Connect & Collaborate",
-    whetherYouHaveAProjectInMind: "Whether you have a project in mind, want to discuss opportunities, or \njust want to chat about tech, I'd love to hear from you!",
+    whetherYouHaveAProjectInMind:
+      "Whether you have a project in mind, want to discuss opportunities, or \njust want to chat about tech, I'd love to hear from you!",
     sendAMessage: "Send a Message",
     typicallyRespondWithin24Hours: "I typically respond within 24 hours",
     yourNameHere: "Your Name here !",
     emailAddress: "Email Address",
     subject: "Subject",
     message: "Your Message",
-    messageSentSuccessfully: "Message sent successfully! I'll get back to you within 24 hours.",
+    messageSentSuccessfully:
+      "Message sent successfully! I'll get back to you within 24 hours.",
     sendingMessage: "Sending Message...",
     sendMessage: "Send Message",
     contactInformation: "Contact Information",
     instantConnect: "Instant Connect",
-    connectWithMeInstantly: "Connect with me instantly on messaging apps like WhatsApp, Telegram, or Signal.",
+    connectWithMeInstantly:
+      "Connect with me instantly on messaging apps like WhatsApp, Telegram, or Signal.",
     whatsApp: "WhatsApp",
     instantMessaging: "Instant Messaging",
-    chatInstantlyForQuickQuestions: "Chat instantly for quick questions or discussions.",
+    chatInstantlyForQuickQuestions:
+      "Chat instantly for quick questions or discussions.",
     telegram: "Telegram",
     fastCommunication: "Fast Communication",
-    forDetailedDiscussionsAndFiles: "For detailed discussions & files, please use the contact form.",
+    forDetailedDiscussionsAndFiles:
+      "For detailed discussions & files, please use the contact form.",
     email: "Email",
     formalCommunication: "Formal Communication",
-    forProjectProposalsAndDocuments: "For project proposals & documents, please use the contact form.",
+    forProjectProposalsAndDocuments:
+      "For project proposals & documents, please use the contact form.",
     voiceCall: "Voice Call",
     directConversation: "Direct Conversation",
     forImportantDiscussions: "For important discussions",
@@ -85,9 +92,10 @@ export const en = {
     subjectMustBeAtLeast3Characters: "Subject must be at least 3 characters",
     messageMustBeAtLeast10Characters: "Message must be at least 10 characters",
   },
-  experience:{
+  experience: {
     professionalJourney: "Professional Journey",
-    myCareerPathAndExperiences: "My career path and the experiences that have shaped me as a software \nengineer",
+    myCareerPathAndExperiences:
+      "My career path and the experiences that have shaped me as a software \nengineer",
     currentRole: "Current",
     present: "Present",
     technologiesAndTools: "Technologies & Tools",
@@ -104,31 +112,51 @@ export const en = {
     technologiesUsed: "Technologies Used",
     projects: "Projects",
     readyToBuildSomethingAmazing: "Ready to Build Something Amazing?",
-    letCollaborateOnYourNextProject: "Let's collaborate on your next project and create impactful solutions \ntogether.",
+    letCollaborateOnYourNextProject:
+      "Let's collaborate on your next project and create impactful solutions \ntogether.",
     getInTouch: "Get In Touch",
     unitedArabEmirates: "United Arab Emirates",
-    goMonolithServiceOrientedArchitecture: "Full-time, on-site Go monolith service-oriented architecture for enterprise backends.",
-    designedRESTfulAPIsWithGin: "Designed RESTful APIs with Gin; defined gRPC services and Protobuf contracts.",
-    builtPersistenceLayersWithGORM: "Built persistence layers with GORM; implemented clean architecture and testing.",
-    containerizedServicesWithDocker: "Containerized services with Docker; collaborated on Kubernetes deployments.",
-    implementedObservabilityAndCI_CD: "Implemented observability and CI/CD; improved reliability and code quality.",
+    goMonolithServiceOrientedArchitecture:
+      "Full-time, on-site Go monolith service-oriented architecture for enterprise backends.",
+    designedRESTfulAPIsWithGin:
+      "Designed RESTful APIs with Gin; defined gRPC services and Protobuf contracts.",
+    builtPersistenceLayersWithGORM:
+      "Built persistence layers with GORM; implemented clean architecture and testing.",
+    containerizedServicesWithDocker:
+      "Containerized services with Docker; collaborated on Kubernetes deployments.",
+    implementedObservabilityAndCI_CD:
+      "Implemented observability and CI/CD; improved reliability and code quality.",
     sweden: "Sweden",
-    builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes: "Built and maintained RESTful APIs and serverless backend services using Next.js API routes.",
-    integratedThirdPartyServicesAndAuthenticationSystems: "Integrated third-party services, authentication systems (OAuth, JWT), and payment gateways.",
-    workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment: "Worked with cloud services like Vercel, AWS, and Firebase for hosting and deployment.",
-    optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB: "Optimized database operations and managed backend logic with PostgreSQL, MySQL, and MongoDB.",
+    builtAndMaintainedRESTfulAPIsAndServerlessBackendServicesUsingNextjsAPIRoutes:
+      "Built and maintained RESTful APIs and serverless backend services using Next.js API routes.",
+    integratedThirdPartyServicesAndAuthenticationSystems:
+      "Integrated third-party services, authentication systems (OAuth, JWT), and payment gateways.",
+    workedWithCloudServicesLikeVercelAWSAndFirebaseForHostingAndDeployment:
+      "Worked with cloud services like Vercel, AWS, and Firebase for hosting and deployment.",
+    optimizedDatabaseOperationsAndManagedBackendLogicWithPostgreSQLMySQLAndMongoDB:
+      "Optimized database operations and managed backend logic with PostgreSQL, MySQL, and MongoDB.",
     egypt: "Egypt",
-    customizedAndExtendedOdooModules: "Customized and extended Odoo modules (Sales, Inventory, Account, Purchase) to align with business needs.",
-    developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL: "Developed and maintained custom modules using Python, XML, and PostgreSQL.",
-    managedDatabaseMigrationsAndPerformanceOptimization: "Managed database migrations and performance optimization; collaborated with the mobile app team to ensure seamless ERP and mobile integration.",
+    customizedAndExtendedOdooModules:
+      "Customized and extended Odoo modules (Sales, Inventory, Account, Purchase) to align with business needs.",
+    developedAndMaintainedCustomModulesUsingPythonXMLAndPostgreSQL:
+      "Developed and maintained custom modules using Python, XML, and PostgreSQL.",
+    managedDatabaseMigrationsAndPerformanceOptimization:
+      "Managed database migrations and performance optimization; collaborated with the mobile app team to ensure seamless ERP and mobile integration.",
     uae: "United Arab Emirates",
-    engineeredCrossPlatformMobileAppUsingFlutter: "Engineered a cross-platform mobile application using Flutter, reducing development time by 40% and enhancing user engagement by 30%.",
-    developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms: "Developed and deployed multiple feature-rich Flutter applications for Android and iOS platforms.",
-    integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs: "Integrated RESTful APIs, WebSocket, Firebase services, and third-party SDKs.",
-    implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod: "Implemented clean architecture and state management solutions like Provider, Bloc, and Riverpod.",
-    ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden: "Ensured high code quality through testing (unit, integration, golden) and version control (Git, GitHub).",
-    collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures: "Collaborated with cross-functional teams to define requirements, design architectures, and implement features.",
-    activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards: "Actively participated in code reviews, provided feedback, and ensured code quality standards.",
+    engineeredCrossPlatformMobileAppUsingFlutter:
+      "Engineered a cross-platform mobile application using Flutter, reducing development time by 40% and enhancing user engagement by 30%.",
+    developedAndDeployedMultipleFeatureRichFlutterApplicationsForAndroidAndIOSPlatforms:
+      "Developed and deployed multiple feature-rich Flutter applications for Android and iOS platforms.",
+    integratedRESTfulAPIsWebSocketFirebaseServicesAndThirdPartySDKs:
+      "Integrated RESTful APIs, WebSocket, Firebase services, and third-party SDKs.",
+    implementedCleanArchitectureAndStateManagementSolutionsLikeProviderBlocAndRiverpod:
+      "Implemented clean architecture and state management solutions like Provider, Bloc, and Riverpod.",
+    ensuredHighCodeQualityThroughTestingUnitIntegrationAndGolden:
+      "Ensured high code quality through testing (unit, integration, golden) and version control (Git, GitHub).",
+    collaboratedWithCrossFunctionalTeamsToDefineRequirementsDesignArchitecturesAndImplementFeatures:
+      "Collaborated with cross-functional teams to define requirements, design architectures, and implement features.",
+    activelyParticipatedInCodeReviewsProvidedFeedbackAndEnsuredCodeQualityStandards:
+      "Actively participated in code reviews, provided feedback, and ensured code quality standards.",
     month: "month",
     year: "year",
     downloadingResume: "Downloading resume...",
@@ -138,11 +166,13 @@ export const en = {
     availableForOpportunities: "Available for opportunities",
     buildingThe: "Building the ",
     futureOfTech: "Future of Tech",
-    backendMobileEngineer: "Backend & Mobile Engineer specializing in scalable solutions with ",
+    backendMobileEngineer:
+      "Backend & Mobile Engineer specializing in scalable solutions with ",
     Flutter: "Flutter",
     and: "and",
     CloudTechnologies: "Cloud Technologies",
-    description: "With over 3 years of experience, I architect robust backend systems\nand craft seamless mobile experiences. Passionate about solving\ncomplex problems with elegant solutions and pushing the boundaries\nof what's possible in software engineering.",
+    description:
+      "With over 3 years of experience, I architect robust backend systems\nand craft seamless mobile experiences. Passionate about solving\ncomplex problems with elegant solutions and pushing the boundaries\nof what's possible in software engineering.",
     yearsExperience: "Years of Experience",
     projects: "Projects",
     satisfaction: "Satisfaction",
@@ -160,7 +190,8 @@ export const en = {
   },
   project: {
     title: "Project Portfolio",
-    description: "Explore my collection of innovative projects spanning mobile, web, and \nbackend development.",
+    description:
+      "Explore my collection of innovative projects spanning mobile, web, and \nbackend development.",
     totalProjects: "Total Projects",
     fullStack: "Full Stack",
     mobileApps: "Mobile Apps",
@@ -173,38 +204,50 @@ export const en = {
     impactScore: "Impact Score",
     viewDetails: "View Details",
     wantToSeeMore: "Want to see more?",
-    exploreAllProjects: "Explore all my projects, contributions, and open-source work on \nGitHub and GitLab",
+    exploreAllProjects:
+      "Explore all my projects, contributions, and open-source work on \nGitHub and GitLab",
     viewGitHubPortfolio: "View GitHub Portfolio",
     viewGitLabPortfolio: "View GitLab Portfolio",
     eye: "My Eye",
-    eyeDescription: "Flutter playground app for experimenting with UI components, navigation, and Dart patterns.",
+    eyeDescription:
+      "Flutter playground app for experimenting with UI components, navigation, and Dart patterns.",
     templateiOS: "Template iOS",
-    templateiOSDescription: "Swift template project providing a starter structure for new iOS apps with basic navigation.",
+    templateiOSDescription:
+      "Swift template project providing a starter structure for new iOS apps with basic navigation.",
     realState: "Real Rtate",
-    realStateDescription: "Flutter real estate app with property listing and detail views, demonstrating clean UI and state handling.",
+    realStateDescription:
+      "Flutter real estate app with property listing and detail views, demonstrating clean UI and state handling.",
     driverApp: "Driver App",
-    driverAppDescription: "Flutter driver app for managing trips, drivers, and passengers, with real-time location tracking and notifications.",
+    driverAppDescription:
+      "Flutter driver app for managing trips, drivers, and passengers, with real-time location tracking and notifications.",
     ridyApp: "Ridy App",
-    ridyAppDescription: "Flutter ridy app for ride-hailing or delivery services, with user authentication, real-time tracking, and payment integration.",
+    ridyAppDescription:
+      "Flutter ridy app for ride-hailing or delivery services, with user authentication, real-time tracking, and payment integration.",
     taxiBackend: "Taxi Backend",
-    taxiBackendDescription: "Backend API for a taxi service, handling user authentication, ride requests, driver assignments, and payment processing.",
+    taxiBackendDescription:
+      "Backend API for a taxi service, handling user authentication, ride requests, driver assignments, and payment processing.",
     userApp: "User App",
-    userAppDescription: "Flutter client app for end users, including authentication, profile, and API integration.",
+    userAppDescription:
+      "Flutter client app for end users, including authentication, profile, and API integration.",
     backendChat: "Backend Chat",
-    backendChatDescription: "TypeScript chat backend that exposes messaging endpoints and real-time capabilities for clients.",
+    backendChatDescription:
+      "TypeScript chat backend that exposes messaging endpoints and real-time capabilities for clients.",
     healthLife: "Health Life",
-    healthLifeDescription: "Flutter health application used to explore forms, navigation flow, and theming for wellness tracking.",
+    healthLifeDescription:
+      "Flutter health application used to explore forms, navigation flow, and theming for wellness tracking.",
     odooDocker: "Odoo Docker",
-    odooDockerDescription: "Dockerized environment for running Odoo, simplifying local ERP development and testing.",
+    odooDockerDescription:
+      "Dockerized environment for running Odoo, simplifying local ERP development and testing.",
     allProjects: "All Projects",
     mobileApps: "Mobile Apps",
     backendSystems: "Backend Systems",
     fullStack: "Full Stack",
     openingProjectDetails: "Opening project details",
   },
-  skils:{
+  skils: {
     technicalSkillsDashboard: "Technical Skills Dashboard",
-    interactiveVisualization: "Interactive visualization of my technical expertise across multiple\n domains",
+    interactiveVisualization:
+      "Interactive visualization of my technical expertise across multiple\n domains",
     dashboard: "Dashboard",
     charts: "Charts",
     list: "List",
@@ -216,7 +259,8 @@ export const en = {
     frontend: "Frontend",
     mobile: "Mobile",
     yearsExperience: "Years of Experience",
-    MostExperiencedInMobileApplicationAndBackend: "Most Experienced in Mobile Application & Backend",
+    MostExperiencedInMobileApplicationAndBackend:
+      "Most Experienced in Mobile Application & Backend",
     stackedView: "Stacked View",
     technicalSkillsDashboard: "Technical Skills Dashboard",
     skillDistribution: "Skill Distribution",
@@ -224,7 +268,8 @@ export const en = {
     overallProficiency: "Overall Proficiency",
     more: "more",
     interactiveBarChart: "Interactive Bar Chart",
-    chartDescription: "Hover over bars to see detailed proficiency percentages. \nClick legend items to toggle categories.",
+    chartDescription:
+      "Hover over bars to see detailed proficiency percentages. \nClick legend items to toggle categories.",
     skillsComparison: "Skills Comparison",
     radarAnalysis: "Radar Analysis",
     skillGrowth: "Skill Growth",
@@ -249,5 +294,5 @@ export const en = {
     frontendDevelopment: "Frontend Development",
     devOpsAndCloud: "DevOps & Cloud",
     mobileDevelopment: "Mobile Development",
-  }
+  },
 };
