@@ -253,7 +253,7 @@
               </div>
             </div>
             <div class="h-80 w-full">
-              <v-chart
+              <v-chart v-if="echartsLoaded"
                 :option="barChartOption"
                 autoresize
                 class="w-full h-full"
@@ -275,7 +275,7 @@
               </div>
             </div>
             <div class="h-80 w-full">
-              <v-chart
+              <v-chart v-if="echartsLoaded"
                 :option="pieChartOption"
                 autoresize
                 class="w-full h-full"
@@ -400,7 +400,7 @@
             </div>
           </div>
           <div class="h-[500px] w-full">
-            <v-chart
+            <v-chart v-if="echartsLoaded"
               :option="detailedBarChartOption"
               autoresize
               class="w-full h-full"
@@ -429,7 +429,7 @@
               </div>
             </div>
             <div class="h-[400px] w-full">
-              <v-chart
+              <v-chart v-if="echartsLoaded"
                 :option="radarChartOption"
                 autoresize
                 class="w-full h-full"
@@ -451,7 +451,7 @@
               </div>
             </div>
             <div class="h-[400px] w-full">
-              <v-chart
+              <v-chart v-if="echartsLoaded"
                 :option="lineChartOption"
                 autoresize
                 class="w-full h-full"
@@ -755,33 +755,39 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
-import { use } from "echarts/core";
+import { ref, computed, onMounted, watch, defineAsyncComponent } from "vue";
 import { useI18n } from "vue-i18n";
-import { CanvasRenderer } from "echarts/renderers";
-import { BarChart, RadarChart, PieChart, LineChart } from "echarts/charts";
-import {
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  GridComponent,
-  RadarComponent,
-} from "echarts/components";
-import VChart from "vue-echarts";
+const echartsLoaded = ref(false);
+const VChart = defineAsyncComponent(() => import("vue-echarts"));
 
-// Register ECharts components
-use([
-  CanvasRenderer,
-  BarChart,
-  RadarChart,
-  PieChart,
-  LineChart,
-  TitleComponent,
-  TooltipComponent,
-  LegendComponent,
-  GridComponent,
-  RadarComponent,
-]);
+const loadCharts = async () => {
+  if (echartsLoaded.value) return;
+  const { use } = await import("echarts/core");
+  const { CanvasRenderer } = await import("echarts/renderers");
+  const { BarChart, RadarChart, PieChart, LineChart } = await import(
+    "echarts/charts"
+  );
+  const {
+    TitleComponent,
+    TooltipComponent,
+    LegendComponent,
+    GridComponent,
+    RadarComponent,
+  } = await import("echarts/components");
+  use([
+    CanvasRenderer,
+    BarChart,
+    RadarChart,
+    PieChart,
+    LineChart,
+    TitleComponent,
+    TooltipComponent,
+    LegendComponent,
+    GridComponent,
+    RadarComponent,
+  ]);
+  echartsLoaded.value = true;
+};
 
 // State
 const activeTab = ref("dashboard");
@@ -1394,9 +1400,15 @@ const toggleCategoryFilter = (category) => {
 };
 
 onMounted(() => {
+  if (activeTab.value === "dashboard" || activeTab.value === "charts")
+    loadCharts();
   window.addEventListener("resize", () => {
     // ECharts will auto-resize due to autoresize prop
   });
+});
+
+watch(activeTab, (val) => {
+  if (val === "dashboard" || val === "charts") loadCharts();
 });
 </script>
 
