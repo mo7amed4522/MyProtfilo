@@ -430,14 +430,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 // State
 const activeExperience = ref("1");
-const { t } = useI18n();
+const { t, locale } = useI18n();
 // Experience data
-const experienceItems = [
+const buildExperienceItems = () => [
   {
     id: "1",
     company: "Hera Sawda Technologies Co",
@@ -555,17 +555,21 @@ const experienceItems = [
   },
 ];
 
+const experienceItems = ref(buildExperienceItems());
+
 // Computed properties
 const totalYears = computed(() => {
   const earliest = Math.min(
-    ...experienceItems.map((item) => new Date(item.startDate).getFullYear()),
+    ...experienceItems.value.map((item) =>
+      new Date(item.startDate).getFullYear(),
+    ),
   );
   const currentYear = new Date().getFullYear();
   return currentYear - earliest;
 });
 
 const totalTechnologies = computed(() => {
-  const allTech = experienceItems.flatMap((item) => item.technologies);
+  const allTech = experienceItems.value.flatMap((item) => item.technologies);
   const uniqueTech = new Set(allTech);
   return uniqueTech.size;
 });
@@ -685,6 +689,13 @@ onMounted(() => {
     activeExperience.value = "1";
   }, 100);
 });
+
+watch(
+  () => locale.value,
+  () => {
+    experienceItems.value = buildExperienceItems();
+  },
+);
 </script>
 
 <style scoped>

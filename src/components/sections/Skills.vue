@@ -253,7 +253,8 @@
               </div>
             </div>
             <div class="h-80 w-full">
-              <v-chart v-if="echartsLoaded"
+              <v-chart
+                v-if="echartsLoaded"
                 :option="barChartOption"
                 autoresize
                 class="w-full h-full"
@@ -275,7 +276,8 @@
               </div>
             </div>
             <div class="h-80 w-full">
-              <v-chart v-if="echartsLoaded"
+              <v-chart
+                v-if="echartsLoaded"
                 :option="pieChartOption"
                 autoresize
                 class="w-full h-full"
@@ -400,7 +402,8 @@
             </div>
           </div>
           <div class="h-[500px] w-full">
-            <v-chart v-if="echartsLoaded"
+            <v-chart
+              v-if="echartsLoaded"
               :option="detailedBarChartOption"
               autoresize
               class="w-full h-full"
@@ -429,7 +432,8 @@
               </div>
             </div>
             <div class="h-[400px] w-full">
-              <v-chart v-if="echartsLoaded"
+              <v-chart
+                v-if="echartsLoaded"
                 :option="radarChartOption"
                 autoresize
                 class="w-full h-full"
@@ -451,7 +455,8 @@
               </div>
             </div>
             <div class="h-[400px] w-full">
-              <v-chart v-if="echartsLoaded"
+              <v-chart
+                v-if="echartsLoaded"
                 :option="lineChartOption"
                 autoresize
                 class="w-full h-full"
@@ -764,9 +769,8 @@ const loadCharts = async () => {
   if (echartsLoaded.value) return;
   const { use } = await import("echarts/core");
   const { CanvasRenderer } = await import("echarts/renderers");
-  const { BarChart, RadarChart, PieChart, LineChart } = await import(
-    "echarts/charts"
-  );
+  const { BarChart, RadarChart, PieChart, LineChart } =
+    await import("echarts/charts");
   const {
     TitleComponent,
     TooltipComponent,
@@ -793,10 +797,9 @@ const loadCharts = async () => {
 const activeTab = ref("dashboard");
 const expandedCategories = ref([0]);
 const activeCategory = ref("all");
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
-// Sample skills data
-const skillsData = ref([
+const buildSkills = () => [
   {
     title: t("skils.backendDevelopment"),
     color: "blue",
@@ -846,7 +849,9 @@ const skillsData = ref([
       { name: "Firebase", proficiency: 82, years: 3 },
     ],
   },
-]);
+];
+
+const skillsData = ref(buildSkills());
 
 // Computed properties
 const totalSkills = computed(() => {
@@ -1410,6 +1415,13 @@ onMounted(() => {
 watch(activeTab, (val) => {
   if (val === "dashboard" || val === "charts") loadCharts();
 });
+
+watch(
+  () => locale.value,
+  () => {
+    skillsData.value = buildSkills();
+  },
+);
 </script>
 
 <style scoped>

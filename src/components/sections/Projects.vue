@@ -435,7 +435,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 // Define types
@@ -453,12 +453,12 @@ interface Project {
   completion: number;
   impact: string;
 }
-const { t } = useI18n();
+const { t, locale } = useI18n();
 // State
 const filter = ref<"all" | "mobile" | "backend" | "fullstack">("all");
 
 // Sample projects data - replace with your actual data
-const PROJECTS_DATA: Project[] = [
+const buildProjectsData = (): Project[] => [
   {
     id: 1,
     title: t("project.eye"),
@@ -596,27 +596,36 @@ const PROJECTS_DATA: Project[] = [
   },
 ];
 
+const projects = ref<Project[]>(buildProjectsData());
+
 // Computed properties
 const filteredProjects = computed(() => {
-  if (filter.value === "all") return PROJECTS_DATA;
-  return PROJECTS_DATA.filter((project) => project.category === filter.value);
+  if (filter.value === "all") return projects.value;
+  return projects.value.filter((project) => project.category === filter.value);
 });
 
-const totalProjects = computed(() => PROJECTS_DATA.length);
+const totalProjects = computed(() => projects.value.length);
 
 const projectCounts = computed(() => ({
-  all: PROJECTS_DATA.length,
-  mobile: PROJECTS_DATA.filter((p) => p.category === "mobile").length,
-  backend: PROJECTS_DATA.filter((p) => p.category === "backend").length,
-  fullstack: PROJECTS_DATA.filter((p) => p.category === "fullstack").length,
+  all: projects.value.length,
+  mobile: projects.value.filter((p) => p.category === "mobile").length,
+  backend: projects.value.filter((p) => p.category === "backend").length,
+  fullstack: projects.value.filter((p) => p.category === "fullstack").length,
 }));
 
-const filterOptions = [
+const filterOptions = computed(() => [
   { value: "all", label: t("project.allProjects") },
   { value: "mobile", label: t("project.mobileApps") },
   { value: "backend", label: t("project.backendSystems") },
   { value: "fullstack", label: t("project.fullStack") },
-];
+]);
+
+watch(
+  () => locale.value,
+  () => {
+    projects.value = buildProjectsData();
+  },
+);
 
 // Helper functions
 const openInNewTab = (url: string) => {
