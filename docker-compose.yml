@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  contact:
+    build:
+      context: .
+      dockerfile: server/Containerfile
+    environment:
+      - PORT=3001
+      # Set secrets at runtime (do not commit values)
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - CONTACT_TO_EMAIL=${CONTACT_TO_EMAIL}
+    ports:
+      - "3001:3001"
+
+  web:
+    build:
+      context: .
+      dockerfile: Containerfile
+      args:
+        BASE_URL: "/"
+    depends_on:
+      - contact
+    ports:
+      - "8080:80"
+
